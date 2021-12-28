@@ -1,0 +1,17 @@
+.alert-box {
+  background-color: rgb(131, 131, 233);
+  color: blue;
+  padding: 20px;
+  border-radius: 5px;
+  display: none;
+}
+
+.alert-box__clos {
+  position: relative;
+}
+
+.aler-box__button {
+  position: absolute;
+  top: 163px;
+  right: 30px;
+}

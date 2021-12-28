@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="main.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +16,24 @@
   <h2 id="hello">안녕하세요</h2>
   <h2 id="hi">올때메로나</h2>
 
+  <div>
+    <div class="alert-box__closs">
+      <div class="alert-box" id="alert">
+        Alert box
+        <button class="aler-box__button" onclick="document.getElementById('alert').style.display = 'none';">닫기</button>
+      </div>
+    </div>
+    <button onclick="
+      //클릭했을때 자바스크립트를 실행해주세요
+      document.getElementById('alert').style.display = 'block';
+    ">버튼</button>
+  </div>
+
   <script>
 
     document.getElementById('hello').innerHTML = "안녕";
     document.getElementById('hi').innerHTML = '올때 바밤바';
     document.getElementById('hello').style.fontSize = "30px";
-    
     // 웹문서.html요소 가져와 id hello 내부글자 안녕으로 변경
 
   </script>
