@@ -19,22 +19,29 @@
   <div>
     <div class="alert-box__closs">
       <div class="alert-box" id="alert">
-        Alert box
-        <button class="aler-box__button" onclick="document.getElementById('alert').style.display = 'none';">닫기</button>
+        <span>Alert box</span>
+        <button class="aler-box__button" onclick="alertCloss()">닫기</button>
       </div>
     </div>
-    <button onclick="
-      //클릭했을때 자바스크립트를 실행해주세요
-      document.getElementById('alert').style.display = 'block';
-    ">버튼</button>
+    <button onclick="alertOpen()">버튼</button>
+      <!-- //클릭했을때 자바스크립트를 실행해주세요 -->
   </div>
 
   <script>
 
+    // 웹문서.html요소 가져와 id hello 내부글자 안녕으로 변경
     document.getElementById('hello').innerHTML = "안녕";
     document.getElementById('hi').innerHTML = '올때 바밤바';
     document.getElementById('hello').style.fontSize = "30px";
-    // 웹문서.html요소 가져와 id hello 내부글자 안녕으로 변경
+
+    //fuction을 쓰면 긴코드를 깔끔하게 축약가능
+    function alertOpen(){
+      document.getElementById('alert').style.display = 'block';
+    }
+
+    function alertCloss(){
+      document.getElementById('alert').style.display = 'none';
+    }
 
   </script>
 </body>
