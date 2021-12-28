@@ -20,10 +20,10 @@
     <div class="alert-box__closs">
       <div class="alert-box" id="alert">
         <span>Alert box</span>
-        <button class="aler-box__button" onclick="alertCloss()">닫기</button>
+        <button class="aler-box__button" onclick="alertOpen('none')">닫기</button>
       </div>
     </div>
-    <button onclick="alertOpen()">버튼</button>
+    <button onclick="alertOpen('block')">버튼</button>
       <!-- //클릭했을때 자바스크립트를 실행해주세요 -->
   </div>
 
@@ -34,13 +34,10 @@
     document.getElementById('hi').innerHTML = '올때 바밤바';
     document.getElementById('hello').style.fontSize = "30px";
 
-    //fuction을 쓰면 긴코드를 깔끔하게 축약가능
-    function alertOpen(){
-      document.getElementById('alert').style.display = 'block';
-    }
-
-    function alertCloss(){
-      document.getElementById('alert').style.display = 'none';
+    //1. fuction을 쓰면 긴코드를 깔끔하게 축약가능
+    //2. 함수 업그레이드하고 싶으면 파라미터
+    function alertOpen(blockNone){
+      document.getElementById('alert').style.display = blockNone;
     }
 
   </script>
