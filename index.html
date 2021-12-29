@@ -19,11 +19,12 @@
   <div>
     <div class="alert-box__closs">
       <div class="alert-box" id="alert">
-        <span>Alert box</span>
-        <button class="aler-box__button" onclick="alertOpen('none')">닫기</button>
+        <span id="alert-text">Alert box</span>
+        <button class="aler-box__button" onclick="alertOpen('none')">x</button>
       </div>
     </div>
-    <button onclick="alertOpen('block')">버튼</button>
+    <button onclick="alertOpen('block', '아이디를 입력하세요')">버튼</button>
+    <button onclick="alertOpen('block', '비번을 입력하세요')">버튼</button>
       <!-- //클릭했을때 자바스크립트를 실행해주세요 -->
   </div>
 
@@ -36,9 +37,11 @@
 
     //1. fuction을 쓰면 긴코드를 깔끔하게 축약가능
     //2. 함수 업그레이드하고 싶으면 파라미터
-    function alertOpen(blockNone){
+    function alertOpen(blockNone, title){
       document.getElementById('alert').style.display = blockNone;
+      document.getElementById('alert-text').innerHTML = title;
     }
+
 
   </script>
 </body>
