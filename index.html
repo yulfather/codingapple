@@ -8,6 +8,10 @@
   <title>Document</title>
 </head>
 <body>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
   <!--
     javascript 사용 목적
     -> html 조작과 변경
@@ -27,6 +31,8 @@
     <button onclick="alertOpen('block', '비번을 입력하세요')">버튼</button>
       <!-- //클릭했을때 자바스크립트를 실행해주세요 -->
   </div>
+
+  <h4 id="test" class="test1">안녕하세요</h4>
 
   <script>
 
@@ -50,6 +56,18 @@
       document.getElementById('alert').style.display = "none"
     })
 
+    // jQuery
+    // 선택자 $ 바닐라 자바스크립트보다 강력하다.
+    // $('css셀렉터')괄호안에 css선택자 처럼 작성
+    // document.querySelector('css셀렉터') 하나만 찾을 수 있음
+    //document.querySelectorAll('css셀렉터')[]여러게 찾을경우
+    // document.getElementById('test').innerHTML = ???
+    // 동작은 자바스크립트라 동일 코드를 짧게 쓸 수 있다.
+    $('.test1').html('안녕');
+    $('#test').css('color', 'red');
+    $('#test').attr('class', 'yellow-bg');
+
   </script>
+
 </body>
 </html>
