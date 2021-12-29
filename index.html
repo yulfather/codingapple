@@ -20,7 +20,7 @@
     <div class="alert-box__closs">
       <div class="alert-box" id="alert">
         <span id="alert-text">Alert box</span>
-        <button class="aler-box__button" onclick="alertOpen('none')">x</button>
+        <button class="aler-box__button">x</button>
       </div>
     </div>
     <button onclick="alertOpen('block', '아이디를 입력하세요')">버튼</button>
@@ -35,13 +35,20 @@
     document.getElementById('hi').innerHTML = '올때 바밤바';
     document.getElementById('hello').style.fontSize = "30px";
 
+    
     //1. fuction을 쓰면 긴코드를 깔끔하게 축약가능
     //2. 함수 업그레이드하고 싶으면 파라미터
     function alertOpen(blockNone, title){
       document.getElementById('alert').style.display = blockNone;
       document.getElementById('alert-text').innerHTML = title;
     }
-
+    
+    // 1. addEventListener 
+    // -> 선택자 aler-box__button 클릭이 되면 안에 function문법을 실해한다.
+    // -> addEventListener에 "click"은 이벤트에 한종류 'click', 'keydown', 'scroll', 'mouseover' 등등
+    document.getElementsByClassName('aler-box__button')[0].addEventListener('click', function(){
+      document.getElementById('alert').style.display = "none"
+    })
 
   </script>
 </body>
