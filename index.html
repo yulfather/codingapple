@@ -34,6 +34,14 @@
 
   <h4 id="test" class="test1">안녕하세요</h4>
 
+  <p class="greeting">안녕하세요</p>
+  <p class="greeting">안녕하세요</p>
+  <p class="greeting">안녕하세요</p>
+
+  <button class="btn">버튼</button>
+  <button class="btn">버튼</button>
+  <button class="btn">버튼</button>
+
   <script>
 
     // 웹문서.html요소 가져와 id hello 내부글자 안녕으로 변경
@@ -65,7 +73,21 @@
     // 동작은 자바스크립트라 동일 코드를 짧게 쓸 수 있다.
     $('.test1').html('안녕');
     $('#test').css('color', 'red');
-    $('#test').attr('class', 'yellow-bg');
+    $('#test').addClass('class', 'yellow-bg');
+
+    $('.greeting').eq(0).html('안녕');
+
+    document.getElementsByClassName('btn')[0].addEventListener('click', function(){
+      document.getElementsByClassName('greeting')[0].style.display='none';
+    })
+
+    $('.btn').eq(1).on('click', function(){
+      $('.greeting').eq(1).hide();
+    })
+
+    $('.btn').eq(2).on('click', function(){
+      $('.greeting').slideUp();
+    })
 
   </script>
 
