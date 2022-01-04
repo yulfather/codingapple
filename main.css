@@ -14,6 +14,18 @@
   background-image: url("soyul.jpg");
   background-size: cover;
   color: white;
+  border-radius: 0px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.nav-sub {
+  display: none;
 }
 
 .black-background {

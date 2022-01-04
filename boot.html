@@ -33,13 +33,26 @@
     </div>
   </div>
 
+  <div class="nav-menu">
+    <h4 style="margin: 0">Shirts Studio</h4>
+    <a href="#" id="nav-sub__btn">Products</a>
+  </div>
+
+  <ul class="list-group nav-sub">
+    <li class="list-group-item">Outer</li>
+    <li class="list-group-item">Innerwear</li>
+    <li class="list-group-item">Shots</li>
+    <li class="list-group-item">A fourth item</li>
+    <li class="list-group-item">And a fifth one</li>
+  </ul>
+
   <div class="jumbotron main-background">
     <h1 class="display-4">Shirts Studio</h1>
     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
       content or information.</p>
     <hr class="my-4">
     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <a id="login-btn" class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <a id="login-btn" class="btn btn-primary btn-lg" href="#" role="button">LogIn</a>
   </div>
 
   <script>
@@ -52,6 +65,14 @@
     $('.login-close').on('click', function(){
       $('.black-background').fadeOut();
     })
+
+    $('#nav-sub__btn').click(function(){
+      $('.nav-sub').slideToggle();
+    });
+    // Toggle함수를 사용하여 on off형식에 기능을 편리하게 개발
+    //slideToggole -> slideDown,slideup
+    //fadeToggle -> fadeIn,fadeOut
+    //toggle -> hide, show
 
   </script>
 
