@@ -55,10 +55,21 @@
     <a id="login-btn" class="btn btn-primary btn-lg" href="#" role="button">LogIn</a>
   </div>
 
+  <input id="test-input">
+
   <script>
 
+    if (3 < 1){
+      console.log('안녕')
+    } else {
+      console.log('빠잉')
+    }
+    //if(조건식){}
+
     $('#login-btn').on('click', function(){
-      $('.black-background').fadeIn();
+      if($('#test-input').val() == '안녕'){
+        $('.black-background').fadeIn();
+      }
       //.fadeOut(), .show(), slideDown(), slideUp(), .hide .css('display', 'block')
     })
 
