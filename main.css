@@ -43,7 +43,14 @@
   margin: 100px auto;
   padding: 20px;
   border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+
+#email-alert {
+  display: none;
+  color: red;
+}
+
+#password-alert {
+  display: none;
+  color: red;
 }

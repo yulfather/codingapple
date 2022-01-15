@@ -16,10 +16,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="main.css">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <link rel="shortcut icon" href="#">
 
   <title>Hello, world!</title>
 </head>
@@ -29,7 +31,20 @@
   <div class="black-background">
     <div class="white-background">
       <p>로그인하세요</p>
-      <button class="login-close">X</button>
+
+      <form action="login.php">
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email" id="email">
+          <p id="email-alert">아이디를 입력하세요</p>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" id="password">
+          <p id="password-alert">비번을 입력하세요</p>
+        </div>
+        <button type="submit" class="btn btn-primary">전송</button>
+        <button type="button" class="btn btn-danger login-close">닫기</button>
+      </form>
+
     </div>
   </div>
 
@@ -55,23 +70,49 @@
     <a id="login-btn" class="btn btn-primary btn-lg" href="#" role="button">LogIn</a>
   </div>
 
-  <input id="test-input">
+  <!-- <input id="test-input"> -->
 
   <script>
 
-    if (3 < 1){
+    if (1 == 3){
       console.log('안녕')
+    } else if (1 == 2) {
+      console.log('안녕2')
     } else {
       console.log('빠잉')
     }
     //if(조건식){}
 
-    $('#login-btn').on('click', function(){
-      if($('#test-input').val() == '안녕'){
-        $('.black-background').fadeIn();
+    // and && 비교대상이 전부 true일때 true
+    // or || 비교대상중 하나만 true일때 true
+
+
+    $('form').on('submit', function(e){
+      if ( $('#email').val() == ""){
+        e.preventDefault();
+        $('#email-alert').show();
       }
-      //.fadeOut(), .show(), slideDown(), slideUp(), .hide .css('display', 'block')
+
+      if( $('#password').val() == ""){
+        e.preventDefault();
+        $('#password-alert').show();
+      }
     })
+
+    $('#email').on('change', function(){
+      $('#email-alert').show();
+    })
+    // form과 관련된 이벤트들
+    // input(값이 변경될 때 실행)
+    // change(값이 변겨이되고 focus잃을 때 실행)
+
+    // 'submit' -> 전송될때~
+    // function 파라미터에(e)를 추가 e.preventDefault -> 전송을 막는코드
+
+    $('#login-btn').on('click', function(){
+      $('.black-background').fadeIn();
+    })
+    //.fadeOut(), .show(), slideDown(), slideUp(), .hide .css('display', 'block')
 
     $('.login-close').on('click', function(){
       $('.black-background').fadeOut();
