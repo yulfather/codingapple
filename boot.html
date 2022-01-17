@@ -86,11 +86,14 @@
     // and && 비교대상이 전부 true일때 true
     // or || 비교대상중 하나만 true일때 true
 
+    var email_alert = $('#email-alert');
+    // 같은 셀렉서 여러번 쓰지말고 변수에 담아서 쓰자
+    // 구동시 더빠름
 
     $('form').on('submit', function(e){
       if ( $('#email').val() == ""){
         e.preventDefault();
-        $('#email-alert').show();
+        email_alert.show();
       }
 
       if( $('#password').val() == ""){
@@ -99,15 +102,27 @@
       }
     })
 
-    $('#email').on('change', function(){
-      $('#email-alert').show();
-    })
     // form과 관련된 이벤트들
     // input(값이 변경될 때 실행)
-    // change(값이 변겨이되고 focus잃을 때 실행)
-
+    // change(값이 변경이되고 focus잃을 때 실행)
     // 'submit' -> 전송될때~
     // function 파라미터에(e)를 추가 e.preventDefault -> 전송을 막는코드
+
+    var 이름 = 'john';
+    var 나이 = 41;
+    // var 이름 -> 선언 (변수를 만들겠다)
+    // 이름 = 'john' -> 할당 (값을 집어넣는것)
+    // 범위 -> 함수안에서 선언된 변수는 함수 밖에서 찾을 수 없다
+    // 함수 밖에서 선언된 변수는 함수 안에서 사용가능 전역변수
+    // 범위는 function
+    let 나이 = 30;
+    // 재선언이 불가능한 변수를 만들때 사용
+    // 범위는 중괄호{}
+
+    const 몇살 = 30;
+    // 재할당이 불가능한 변수를 만들때 사용
+    // frontend환경에 잘 사용되지 않는다 서버환경에서 사용됨
+    // 범위는 중괄호{}
 
     $('#login-btn').on('click', function(){
       $('.black-background').fadeIn();
