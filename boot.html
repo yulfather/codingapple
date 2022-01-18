@@ -141,15 +141,15 @@
     // 범위는 중괄호{}
 
     $('#login-btn').on('click', function(){
-      $('.black-background').css('margin-top', '0px');
+      $('.black-background').css('transform', 'translateY(0px)');
     });
-    // 실무에서 animation기능은 css로만 사용
-    // 함수들은 연결하여 사용할 수 있다.
-    // jQuery 함수들 순서대로 실행하기
-    //$('#login-btn').on('click', function(){
-      //$('black-background').show().animate({marginTop : '0px'}, 1000);
-    //});
-    //.fadeOut(), .show(), slideDown(), slideUp(), .hide .css('display', 'block')
+    // 프로의 개발팁
+    // 애니메이션을 프로처럼 개발하려면 2. margin 말고 transform 속성을 쓰자 
+    //margin, width, height, top, left, bottom, right
+    //이런 CSS 속성들은 페이지 레이아웃을 변경하는 속성입니다.
+    //브라우저는 레이아웃을 변경하면 렌더링시간이 매우 오래걸립니다.
+    //transform, opacity 이런 CSS 속성들은 페이지 레이아웃과 상관없는 쩌리 속성들입니다.
+    
 
     $('.login-close').on('click', function(){
       $('.black-background').fadeOut();
