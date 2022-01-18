@@ -141,14 +141,11 @@
     // 범위는 중괄호{}
 
     $('#login-btn').on('click', function(){
-      $('.black-background').css('transform', 'translateY(0px)');
+      $('.black-background').addClass('slide-down');
     });
-    // 프로의 개발팁
-    // 애니메이션을 프로처럼 개발하려면 2. margin 말고 transform 속성을 쓰자 
-    //margin, width, height, top, left, bottom, right
-    //이런 CSS 속성들은 페이지 레이아웃을 변경하는 속성입니다.
-    //브라우저는 레이아웃을 변경하면 렌더링시간이 매우 오래걸립니다.
-    //transform, opacity 이런 CSS 속성들은 페이지 레이아웃과 상관없는 쩌리 속성들입니다.
+    // addClass(class부착하는 방식) 최종화면으로 변하는건 class를 붙이는 방식으로 개발하자
+    // addClass() removeClass() 함수를 이용해서 미리 만들어놓은 CSS 클래스명을 붙여서 최종화면으로 변하게 만드는게 좋습니다.
+    // javascript에서 css작성하지 말란 얘기
     
 
     $('.login-close').on('click', function(){

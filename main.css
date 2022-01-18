@@ -65,3 +65,7 @@
   position: fixed;
   margin-left: -150px;
 }
+
+.slide-down {
+  transform: translateY(0px);
+}
