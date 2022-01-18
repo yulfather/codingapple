@@ -40,7 +40,8 @@
 .white-background {
   background-color: white;
   width: 80%;
-  margin: 100px auto;
+  margin-top: -300px;
+  margin-left: 100px;
   padding: 20px;
   border-radius: 10px;
 }
@@ -53,4 +54,13 @@
 #password-alert {
   display: none;
   color: red;
+}
+
+.left-menu {
+  width: 150px;
+  height: 100%;
+  background: black;
+  color: white;
+  position: fixed;
+  margin-left: -150px;
 }
