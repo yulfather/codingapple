@@ -141,9 +141,9 @@
     // 범위는 중괄호{}
 
     $('#login-btn').on('click', function(){
-      $('.black-background').fadeIn()
-      $('.white-background').animate({ marginTop: '200px' }, 1000);
-    })
+      $('.black-background').css('margin-top', '0px');
+    });
+    // 실무에서 animation기능은 css로만 사용
     // 함수들은 연결하여 사용할 수 있다.
     // jQuery 함수들 순서대로 실행하기
     //$('#login-btn').on('click', function(){
