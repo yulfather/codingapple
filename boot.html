@@ -97,10 +97,32 @@
         $('#password-alert').show();
       }
     })*/
+
+    var emailAlert = $('#email-alert');
+    
+    $('form').on('submit', function(e){
+      
+      var inputEmail = $('#email').val();
+      if ( /\S+@\S+\.\S+/.test(inputEmail) == false ){
+        e.pareventDefault();
+        emailAlert.show();
+      } else if ( inputEmail == "" ){
+        e.pareventDefault();
+      }
+
+      var regPsw = $('#password').val();
+      if ( /[A-Z]+/.test(regPsw) == false ){
+        e.pareventDefault();
+      }
+      
+    });
+
+    /* 
     /[A-z]/.test('abcde'); // [모든알파벳]
     /\S/.test('ㄴ@'); // \S(특수문자포함 모든문자)
     /\S@\S.\S/.test('asdf@naver.com'); // 특수문자 포함 모든문자 1개
-    /\S+@\S+\.\S+/.test('asdfasf@naver.com'); // +뒤에 문자열 전부 찾아주세요
+    /\S+@\S+\.\S+/.test('asdfasf@naver.com'); // +뒤에 문자열 전부 찾아주세요 
+    */
 
     // 정규식 문자를 검사하고 싶을때 사용
     //'dsvcsdcab'
