@@ -69,3 +69,17 @@
 .slide-down {
   transform: translateY(0px);
 }
+
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+
+.slide-container {
+  width: 300vw;
+  transition: transform 1s;
+}
+
+.slide-box img {
+  width: 100%;
+}

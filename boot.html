@@ -75,9 +75,39 @@
     <a id="login-btn" class="btn btn-primary btn-lg" href="#" role="button">LogIn</a>
     <a id="show-menu" class="btn btn-danger btn-lg" href="#" role="button">Show Menu</a>
   </div>
+
+  <h4 class="my-4 text-center">Showcase</h4>
+
+  <div style="overflow: hidden">
+    <!-- overflow: hidden 스크롤바가 없어짐  안에서 넘치는부분을 숨김-->
+    <div class="slide-container">
+      <div class="slide-box">
+        <img src="screenshots/soyul1.jpg" alt="">
+      </div>
+      <div class="slide-box">
+        <img src="screenshots/soyul2.jpg" alt="">
+      </div>
+      <div class="slide-box">
+        <img src="screenshots/soyul3.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <button class="slide-1">1</button>
+  <button class="slide-2">2</button>
+  <button class="slide-3">3</button>
   
+  <div class="my-5"></div>
   
   <script>
+
+    $('.slide-2').click(function(){
+      $('.slide-container').css('transform', 'translateX(-100vw)');
+    });
+
+    $('.slide-3').click(function(){
+      $('.slide-container').css('transform', 'translateX(-200vw)')
+    });
 
 
 
