@@ -80,6 +80,7 @@
 
   <div style="overflow: hidden; position: relative">
     <!-- overflow: hidden 스크롤바가 없어짐  안에서 넘치는부분을 숨김-->
+    <button class="slide-previous">Previous</button>
     <div class="slide-container">
       <div class="slide-box">
         <img src="screenshots/soyul1.jpg" alt="">
@@ -102,9 +103,24 @@
   
   <script>
 
+    var img_count = $('.slide-container img').length;
     var slideImg = 1;
 
-    $('.slide-next').click(function() {
+    $('.slide-next').click(function(){
+      if (slideImg < img_count){
+        $('.slide-container').css('transform', 'translateX(-'+slideImg+'00vw)');
+        slideImg = slideImg + 1;
+      }
+    });
+
+    $('.slide-previous').click(function () {
+        if (1 < slideImg) {
+          $('.slide-container').css('transform', 'translateX(-' + (slideImg - 2) + '00vw)');
+          slideImg = slideImg - 1;
+        }
+      });
+
+    /*$('.slide-next').click(function() {
 
       if ( slideImg == 1 ){
         $('.slide-container').css('transform', 'translateX(-100vw)');
@@ -115,7 +131,7 @@
         slideImg = slideImg + 1;
       }
 
-    });
+    });*/
 
     $('.slide-1').click(function () {
         $('.slide-container').css('transform', 'translateX(0vw)');

@@ -84,8 +84,14 @@
   width: 100%;
 }
 
-.slide-next {
+.slide-next,
+.slide-previous {
   position: absolute;
   top: 45%;
   right: 0;
+}
+
+.slide-previous {
+  left: 0;
+  z-index: 6;
 }
