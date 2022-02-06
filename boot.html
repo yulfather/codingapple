@@ -224,8 +224,6 @@
     // ㄱ이라는 글자가 들어있나요?
 
 
-
-
     $('#login-btn').on('click', function(){
       $('.black-background').addClass('slide-down');
     });
@@ -234,6 +232,20 @@
     $('.login-close').on('click', function(){
       $('.black-background').fadeOut();
     })
+
+    $('.black-background').click(function(e){
+      if (e.target == e.currentTarget){
+        $('.black-background').hide();
+      };
+    });
+    // 이벤트 버블링
+    // 하나를 클릭하면 상위요소와 함께 선택되어 버그처럼 작동함
+    // 이벤트 버블링 해결방법 function(e) "e"인자 추가
+    // e.target; 지금 실제로 클릭한 요소
+    // e.currentTarget; = $(this); 지금 이벤트리스너가 달린곳
+    // e.preventDefault(); 기본동작 막기위한 함수
+    // e.target -> 바닐라자바스크립트, $('.black-background') 제이쿼리 문법 의미는 같으나 형식이 다름
+    // 같은문법으로 사용
 
     $('#nav-sub__btn').click(function(){
       $('.nav-sub').slideToggle();
