@@ -94,14 +94,36 @@
         <img src="screenshots/soyul3.jpg" alt="">
       </div>
     </div>
-    <button class="slide-next"><i class="fas fa-angle-double-right fa-5x"></i></i></i></button>
+    <button class="slide-next"><i class="fas fa-angle-double-right fa-5x"></i></button>
   </div>
 
+<div class="slide-button__count">
   <button class="slide-1">1</button>
   <button class="slide-2">2</button>
   <button class="slide-3">3</button>
+</div>
   
   <div class="my-5"></div>
+
+  <div class="container mt-5">
+    <ul class="list">
+      <li class="tab-button">Products</li>
+      <li class="tab-button">Information</li>
+      <li class="tab-button">Shipping</li>
+    </ul>
+  
+    <div class="tab-content">
+      <p>상품설명입니다. Product</p>
+    </div>
+    <div class="tab-content">
+      <p>상품정보입니다. Info</p>
+    </div>
+    <div class="tab-content">
+      <p>배송정보입니다. Shipping</p>
+    </div>
+  </div>
+
+  <script src="tap.js"></script>
   
   <script>
 
@@ -115,8 +137,9 @@
       }
     });
 
-    var img_count = $('.slide-container img').length;
-    var slideImg = 1;
+    let i = 0;
+    let img_count = $('.slide-container img').length;
+    let slideImg = $('.slide-container img').eq(i).length;
 
     $('.slide-next').click(function(){
       if (slideImg < img_count){
@@ -145,17 +168,12 @@
 
     });*/
 
-    $('.slide-1').click(function () {
-        $('.slide-container').css('transform', 'translateX(0vw)');
+    let slide_buttons = $('.slide-button__count button').length;
+    for (let i = 0; i < slide_buttons; i++){
+      $('.slide-button__count button').eq(i).click(function () {
+        $('.slide-container').css('transform', 'translateX(-'+i+'00vw)');
       });
-
-    $('.slide-2').click(function(){
-      $('.slide-container').css('transform', 'translateX(-100vw)');
-    });
-
-    $('.slide-3').click(function(){
-      $('.slide-container').css('transform', 'translateX(-200vw)')
-    });
+    };
 
     $('#show-menu').click(function(){
       $('.left-menu').animate({ marginLeft : '0px' }, 1000);
