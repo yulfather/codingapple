@@ -40,13 +40,24 @@ function tabOpen(tabN){
 };
 
 $('.list').click(function(e){
-  if(e.target == document.querySelectorAll('.tab-button')[0]){
-    tabOpen(0)
-  }
-  if(e.target == document.querySelectorAll('.tab-button')[1]){
-    tabOpen(1)
-  }
-  if(e.target == document.querySelectorAll('.tab-button')[2]){
-    tabOpen(2)
-  }
+  tabOpen(e.target.dataset.id)
+  // e.target -> 현재 클릭한 요소
+  // dataset.id -> html 태그에심어놓은 data-id값
+
+  // jQuery문법으로 html에 정보정장하는법
+  // $('.list').data('작명', '값'); 저장
+  // $('.list').data('작명') 불러오기
 });
+
+
+// $('.list').click(function(e){
+//   if(e.target == document.querySelectorAll('.tab-button')[0]){
+//     tabOpen(0)
+//   }
+//   if(e.target == document.querySelectorAll('.tab-button')[1]){
+//     tabOpen(1)
+//   }
+//   if(e.target == document.querySelectorAll('.tab-button')[2]){
+//     tabOpen(2)
+//   }
+// });
